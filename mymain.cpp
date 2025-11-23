@@ -32,6 +32,6 @@ int main(const int argc, char** argv)
 		}
 	}
 
-	std::cout << "Invalid argument \"" << funcName << "\"." << std::endl;
+	std::cout << "Invalid function \"" << funcName << "\"." << std::endl;
 	return 1;
 }
