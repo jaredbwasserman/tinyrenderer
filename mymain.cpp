@@ -6,5 +6,5 @@
 
 int main(int argc, char** argv)
 {
-	return bresenham(argc, argv);
+	return bresenham();
 }
