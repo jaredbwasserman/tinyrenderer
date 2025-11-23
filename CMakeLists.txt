@@ -21,7 +21,15 @@ endif ()
 
 find_package(OpenMP COMPONENTS CXX)
 
-set(SOURCES main.cpp our_gl.cpp model.cpp tgaimage.cpp mymain.cpp)
+set(SOURCES
+        main.cpp
+        our_gl.cpp
+        model.cpp
+        tgaimage.cpp
+        mymain.cpp
+        bresenham.cpp
+        bresenham.h
+)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE $<$<BOOL:${OpenMP_CXX_FOUND}>:OpenMP::OpenMP_CXX>)
