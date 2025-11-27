@@ -10,7 +10,7 @@
 #include "bresenham.h"
 
 static const std::unordered_map<std::string, std::function<int()>> FUNCTIONS = {
-	{"bresenham", bresenham}
+	{"bresenham", Bresenham}, {"bresenhamhw", BresenhamHW}
 };
 
 static void PrintFunctions()

@@ -5,6 +5,7 @@
 #ifndef TINYRENDERER_BRESENHAM_H
 #define TINYRENDERER_BRESENHAM_H
 
-int bresenham();
+int Bresenham();
+int BresenhamHW();
 
 #endif //TINYRENDERER_BRESENHAM_H
