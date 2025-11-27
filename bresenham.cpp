@@ -2,8 +2,11 @@
 // Created by Jared Wasserman on 11/22/25.
 //
 
-#include "bresenham.h"
+#include <fstream>
+#include <iostream>
+#include <string>
 
+#include "bresenham.h"
 #include "tgaimage.h"
 
 constexpr TGAColor white = {255, 255, 255, 255}; // attention, BGRA order
@@ -41,7 +44,7 @@ void Line(int ax, int ay, int bx, int by, TGAImage& framebuffer, TGAColor color)
 	}
 }
 
-int Bresenham()
+int Bresenham(const std::vector<std::string>&)
 {
 	constexpr int width = 64;
 	constexpr int height = 64;
@@ -64,7 +67,29 @@ int Bresenham()
 	return 0;
 }
 
-int BresenhamHW()
+int BresenhamHW(const std::vector<std::string>& arguments)
 {
+	if (arguments.empty())
+	{
+		std::cerr << "Must provide an input file path." << std::endl;
+		return 1;
+	}
+	const std::string& filePath = arguments.at(0);
+
+	std::ifstream inputFile(filePath);
+	if (!inputFile.is_open())
+	{
+		std::cerr << "Error opening file \"" << filePath << "\"." << std::endl;
+		return 1;
+	}
+
+	std::string line;
+	while (std::getline(inputFile, line))
+	{
+		// TODO: Fix me
+		std::cout << line << std::endl;
+	}
+
+	inputFile.close();
 	return 0;
 }

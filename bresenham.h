@@ -5,7 +5,7 @@
 #ifndef TINYRENDERER_BRESENHAM_H
 #define TINYRENDERER_BRESENHAM_H
 
-int Bresenham();
-int BresenhamHW();
+int Bresenham(const std::vector<std::string>& arguments);
+int BresenhamHW(const std::vector<std::string>& arguments);
 
 #endif //TINYRENDERER_BRESENHAM_H
