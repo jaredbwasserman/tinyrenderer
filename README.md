@@ -1,6 +1,7 @@
 # Software rendering in 500 lines of bare C++
 
 The code itself is of little interest. Check the course notes:
+
 1. [Introduction](https://haqr.eu/tinyrenderer/)
 2. [Bresenham’s line drawing algorithm](https://haqr.eu/tinyrenderer/bresenham/)
 3. [Triangle rasterization](https://haqr.eu/tinyrenderer/rasterization/)
@@ -16,11 +17,14 @@ The code itself is of little interest. Check the course notes:
 13. [Bonus: toon shading](https://haqr.eu/tinyrenderer/toon/)
 14. [Afterword](https://haqr.eu/tinyrenderer/afterword/)
 
-In this series of articles, I aim to demonstrate how OpenGL, Vulkan, Metal, and DirectX work by writing a simplified clone from scratch.
+In this series of articles, I aim to demonstrate how OpenGL, Vulkan, Metal, and DirectX work by writing a simplified
+clone from scratch.
 Surprisingly, many people struggle with the initial hurdle of learning a 3D graphics API.
-To help with this, I have prepared a short series of lectures, after which my students are able to produce quite capable renderers.
+To help with this, I have prepared a short series of lectures, after which my students are able to produce quite capable
+renderers.
 
-The task is as follows: using no third-party libraries (especially graphics-related ones), we will generate an image like this:
+The task is as follows: using no third-party libraries (especially graphics-related ones), we will generate an image
+like this:
 
 ![](https://haqr.eu/tinyrenderer/home/africanhead.png)
 
@@ -37,14 +41,19 @@ The input is a 3D model composed of a triangulated mesh and textures.
 The output is a rendereding.
 There is no graphical interface, the program simply generates an image.
 
-To minimize external dependencies, I provide my students with a single class for handling [TGA](http://en.wikipedia.org/wiki/Truevision_TGA) files —
+To minimize external dependencies, I provide my students with a single class for
+handling [TGA](http://en.wikipedia.org/wiki/Truevision_TGA) files —
 one of the simplest formats supporting RGB, RGBA, and grayscale images.
 This serves as our foundation for image manipulation.
-At the beginning, the only available functionality (besides loading and saving images) is the ability to set the color of a single pixel.
+At the beginning, the only available functionality (besides loading and saving images) is the ability to set the color
+of a single pixel.
 
 There are no built-in functions for drawing line segments or triangles — we will implement all of this manually.
-While I provide my own source code, written alongside my students, I do not recommend using it directly, as doing the work yourself is essential to understanding the concepts.
-The complete code is available on [github](https://github.com/ssloy/tinyrenderer), and you can find the initial source code I provide to my students [here](https://github.com/ssloy/tinyrenderer/tree/706b2dfecff65daeb93de568ee2c2bd87f277860).
+While I provide my own source code, written alongside my students, I do not recommend using it directly, as doing the
+work yourself is essential to understanding the concepts.
+The complete code is available on [github](https://github.com/ssloy/tinyrenderer), and you can find the initial source
+code I provide to my
+students [here](https://github.com/ssloy/tinyrenderer/tree/706b2dfecff65daeb93de568ee2c2bd87f277860).
 Behold, here is the starting point:
 
 ```cpp
@@ -78,7 +87,6 @@ It produces the 64x64 image `framebuffer.tga`, here I scaled it for better reada
 
 ![](https://haqr.eu/tinyrenderer/bresenham/bresenham0.png)
 
-
 ## Teaser: few examples made with the renderer
 
 ![](https://haqr.eu/tinyrenderer/home/demon.png)
@@ -98,4 +106,13 @@ cmake -Bbuild &&
 cmake --build build -j &&
 build/tinyrenderer obj/diablo3_pose/diablo3_pose.obj obj/floor.obj
 ```
+
 The rendered image is saved to `framebuffer.tga`.
+
+# Jared's Notes
+
+## Clion Configurations
+
+1. `bresenham`
+2. `bresenhamhw`
+    1. `/Users/jaredwasserman/github/tinyrenderer/obj/diablo3_pose/diablo3_pose.obj`
